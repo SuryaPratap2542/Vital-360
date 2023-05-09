@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+
+      
+    .main {   
+        top: 80px;
+        left: 110px;
+        width: 550px;
+        background-color: white;
+        border-radius: 15px;
+        align-items: center;
+        height: 72vh;
+        padding: 20px;
+    }
+
+    .main:hover {
+        box-shadow: 50px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+        font-family: Times New Roman;
+        margin: 20px, 0;
+        color: #F6465B;
+        font-size: 30px;
+        font-weight: bold;
+        animation-delay: 3.5s;
+    }
+
+    input[type=submit] {
+        background-color: #FFA500;
+        border: 2px;
+        color: white;
+        padding: 10px 16px;
+        cursor: pointer;
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+
+    input {
+        padding: 20px, 0;
+        margin: 20px, 0;
+    }
+
+    p {
+        color: #ffffff;
+    }
+
+    .row em {
+        color: #BF0A30;
+    }
+
+</style>
+<center>
+<div class="container">
+    <div class="main">
+        <h1>Diabetes disease Predictor</h1>
+        <hr>
+        <form method="get" action="{% url 'result' %}">
+            <table>
+                <tr>
+                    <td align="right">Pregnancies:</td>
+                    <td align="left"><input type="text" name="n1" required></td>
+                </tr>
+                <tr>
+                    <td align="right">Glucose:</td>
+                    <td align="left"><input type="text" name="n2" required></td>
+                </tr>
+                <tr>
+                    <td align="right">Blood Pressure:</td>
+                    <td align="left"><input type="text" name="n3" required></td>
+                </tr>
+                <tr>
+                    <td align="right">Skin Thickness:</td>
+                    <td align="left"><input type="text" name="n4" required></td>
+                </tr>
+                <tr>
+                    <td align="right">Insulin:</td>
+                    <td align="left"><input type="text" name="n5" required></td>
+                </tr>
+                <tr>
+                    <td align="right">BMI:</td>
+                    <td align="left"><input type="text" name="n6" required></td>
+                </tr>
+                <tr>
+                    <td align="right">Diabetes Padigree Function:</td>
+                    <td align="left"><input type="text" name="n7" required></td>
+                </tr>
+                <tr>
+                    <td align="right">Age:</td>
+                    <td align="left"><input type="text" name="n8" required></td>
+                </tr>
+            </table>
+            <input type="submit" value="PREDICT">
+        </form>
+
+        <div class="row">
+            <h2><em>{{result2}}</em></h2>
+        </div>
+    </div>
+</div>
+</center>
+
+
+{% endblock %}

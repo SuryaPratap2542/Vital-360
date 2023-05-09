@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Solution{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Change the color value to your desired background color */
+    }
+    .center-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff; /* This sets the box color */
+    }
+    .download-btn {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .download-btn:hover {
+        background-color: #28a745;
+        border-color: #28a745;
+        color: #fff;
+    }
+</style>
+
+
+<div class="container mt-5 center-box">
+    <h2 class="text-center">Disease Prediction Results</h2>
+    <hr>
+    <h3>Predicted Disease: <span class="text-primary">{{result2}}</span></h3>
+    <br>
+    <h4>Causes:</h4>
+    <ul>
+        Cancer is caused by abnormal cells in the body that grow and divide uncontrollably. The causes of cancer are complex and may include genetic factors, environmental factors (such as exposure to chemicals or radiation), and lifestyle factors (such as smoking or a poor diet).
+    </ul>
+    <br>
+    <h4>Causes:</h4>
+    <ul>
+        Liver disease can be caused by a variety of factors, including viral infections (such as hepatitis B or C), alcohol abuse, obesity, and genetic factors.    </ul>
+    <br>
+    <h4>Treatments:</h4>
+    <ul>
+        Treatment for liver disease may include lifestyle changes (such as avoiding alcohol or losing weight), medication (such as antiviral drugs or steroids), or surgery (such as a liver transplant).    </ul>
+    <br>
+    <h4>Medications:</h4>
+    <ul>
+        Common medications for cancer include chemotherapy drugs, targeted therapy drugs, and immunotherapy drugs.
+    </ul>
+    <br>
+    <h4>Medical Advice:</h4>
+    <ul>To reduce your risk of cancer, it is important to maintain a healthy lifestyle, including a balanced diet, regular exercise, avoiding smoking and excessive alcohol consumption, and protecting yourself from exposure to harmful chemicals or radiation.</ul>
+    <br>
+    <h4>Informative Video:</h4>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    </div>
+    <div class="text-center mt-3">
+        {% comment %} <a href="{% url 'download_pdf' %}" class="btn download-btn">Download PDF</a> {% endcomment %}
+        <a href="{% url 'home' %}" class="btn btn-primary">Home</a> <a href="{% url 'download_pdf' %}" class="btn download-btn">Download PDF</a>
+
+        
+    </div>
+</div>
+
+{% endblock %}

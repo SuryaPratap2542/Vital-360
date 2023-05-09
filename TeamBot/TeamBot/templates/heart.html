@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .ok{
+        color: green;
+        font-size: 50px;
+    }
+    body {
+        background-image: url('{% static "images/b3.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        background-attachment: fixed;
+        overflow: auto;
+    }
+    .col-md-4 {
+        margin: auto;
+        max-width: 30rem;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .form-box {
+        background: linear-gradient(to top right, #80cbc4,#e1bee7,#80ddea,#d1c4e9);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+</style>
+
+<div class="container">
+    <div class="display-4 my-2 text-center" style="margin-bottom: 30px;">
+        <h1>Heart Disease Prediction</h1>
+    </div>
+    <hr />
+    {% if context %}
+    <div class="h1 my-2 text-center">
+        You {{ context }} heart disease.
+    </div>
+    {% endif %}
+
+    <div class="col-md-4">
+        <div class="form-box">
+            <form class="" method="POST" action="{% url 'heart' %}">
+                {% csrf_token %}
+                {{ form }}
+                <div class="mt-4">
+                    <button type="submit" class="btn-lg btn-block btn btn-outline-success mb-5">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

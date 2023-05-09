@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Solution{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Change the color value to your desired background color */
+    }
+    .center-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff; /* This sets the box color */
+    }
+    .download-btn {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .download-btn:hover {
+        background-color: #28a745;
+        border-color: #28a745;
+        color: #fff;
+    }
+</style>
+
+
+<div class="container mt-5 center-box">
+    <h2 class="text-center">Disease Prediction Results</h2>
+    <hr>
+    <h3>Predicted Disease: <span class="text-primary">{{result2}}</span></h3>
+    <br>
+    <h4>Causes:</h4>
+    <ul>
+        COVID-19 is caused by the SARS-CoV-2 virus, which is primarily spread through respiratory droplets when an infected person coughs or sneezes.
+    </ul>
+    <h4>Treatments:</h4>
+    <br>
+    <ul>
+        Treatment for COVID-19 may include supportive care (such as oxygen therapy), antiviral medications, steroids, and/or monoclonal antibodies, depending on the severity of the illness.
+    </ul>
+    <br>
+    <h4>Medications:</h4>
+    <ul>
+        Common medications for COVID-19 include remdesivir, dexamethasone, and monoclonal antibodies.
+    </ul>
+    <br>
+    <h4>Medical Advice:</h4>
+    <ul>To prevent COVID-19, it is important to practice good hygiene, including washing your hands frequently, wearing a mask in public, avoiding close contact with others, and getting vaccinated if eligible.</ul>
+    <br>
+    <h4>Informative Video:</h4>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    </div>
+    <div class="text-center mt-3">
+        <a href="{% url 'home' %}" class="btn btn-primary">Home</a> <a href="{% url 'download_pdf' %}" class="btn download-btn">Download PDF</a>
+    </div>
+</div>
+
+{% endblock %}

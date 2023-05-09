@@ -1,0 +1,68 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Solution{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Change the color value to your desired background color */
+    }
+    .center-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff; /* This sets the box color */
+    }
+    .download-btn {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .download-btn:hover {
+        background-color: #28a745;
+        border-color: #28a745;
+        color: #fff;
+    }
+</style>
+
+
+<div class="container mt-5 center-box">
+    <h2 class="text-center">Disease Prediction Results</h2>
+    <hr>
+    <h3>Predicted Disease: <span class="text-primary">{{result2}}</span></h3>
+    <br>
+    <h4>Causes:</h4>
+    <ul>
+        Diabetes is caused by problems with insulin, the hormone that regulates blood sugar levels. Type 1 diabetes is an autoimmune disease where the body attacks and destroys insulin-producing cells, while type 2 diabetes is caused by a combination of genetic and lifestyle factors (such as obesity and inactivity).
+    </ul>
+    <h4>Treatments:</h4>
+    <ul>
+     Treatment for diabetes may include medication (such as insulin or oral medications), lifestyle changes (such as a healthy diet and exercise), and/or insulin pump therapy.
+    </ul>
+    <br>
+    <h4>Medications:</h4>
+    <ul>
+        Common medications for diabetes include insulin, metformin, sulfonylureas, and GLP-1 receptor agonists.
+    </ul>
+    <br>
+    <h4>Medical Advice:</h4>
+    <ul>To manage diabetes, it is important to maintain a healthy lifestyle, including a balanced diet, regular exercise, monitoring blood sugar levels, taking medication as prescribed, and managing any other health conditions that may affect blood sugar levels.</ul>
+    <br>
+    <h4>Informative Video:</h4>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    </div>
+    <div class="text-center mt-3">
+        {% comment %} <a href="{% url 'download_pdf' %}" class="btn download-btn">Download PDF</a> {% endcomment %}
+        <button> <a href="{% url 'home' %}" class="btn btn-primary">Home</a></button> <a href="{% url 'download_pdf' %}" class="btn download-btn">Download PDF</a>
+    </div>
+</div>
+
+{% endblock %}

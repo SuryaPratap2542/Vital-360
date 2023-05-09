@@ -1,0 +1,95 @@
+{% load static %}
+
+<style>
+  .navbar-custom {
+    background-image: linear-gradient(to right, #36d1dc, #5b86e5);
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    height:70px;
+  }
+
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav-link {
+    color: #ffffff;
+  }
+
+  .navbar-custom .nav-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .navbar-custom .btn-success {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .navbar-custom .btn-success:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .navbar-custom .btn-link {
+    color: #ffffff;
+  }
+
+  .navbar-custom .btn-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+  <!-- Container wrapper -->
+  <div class="container">
+    <a class="navbar-brand me-2" href="/">
+      <img src="{% static 'logo/TeamLogo.jpg' %}" height="60" alt="MDB Logo" loading="lazy" style="margin-top: -1px; border-radius: 50%;" />
+    </a>
+    
+    
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><h3> Vital 360 </h3>
+          </a>
+        </li>
+      </ul>
+      <!-- Left links -->
+
+      {% if request.user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" style="color: white;" href="/logout">
+          {{ request.user.username }}
+          <button type="button" class="btn btn-success">Logout</button>
+        </a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="/login">
+          <button type="button" class="btn btn-success">Login</button>
+        </a>
+      </li>
+      <button type="button" class="btn btn-link me-3">
+        <a href="{% url 'signup' %}">Sign up for free</a>
+      </button>
+      {% endif %}
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

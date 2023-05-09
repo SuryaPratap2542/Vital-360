@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    h1 {
+        font-family: Times New Roman;
+        margin: 20px 0;
+        color: #F6465B;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    p {
+        margin: 20px 0;
+        font-size: 20px;
+        color: #000000;
+    }
+
+    .gif {
+        width: 100%;
+        max-width: 500px;
+        margin-top: 20px;
+    }
+
+    input[type=submit] {
+        background-color: #FFA500;
+        border: 2px;
+        color: white;
+        padding: 10px 16px;
+        cursor: pointer;
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .main {
+            margin-top: 20px;
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="main">
+        <h1>Congratulations!</h1>
+        <p>{{result2}}</p>
+        <iframe src="https://giphy.com/embed/X5i6vI3JnqB7g8Ocjs" width="480" height="265" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nhl-stanley-cup-colorado-avalanche-champions-X5i6vI3JnqB7g8Ocjs">via GIPHY</a></p>
+        <form method="get" action="{% url 'home' %}">
+            <input type="submit" value="Go back to Home Page">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

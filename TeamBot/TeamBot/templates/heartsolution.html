@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Solution{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Change the color value to your desired background color */
+    }
+    .center-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff; /* This sets the box color */
+    }
+    .download-btn {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .download-btn:hover {
+        background-color: #28a745;
+        border-color: #28a745;
+        color: #fff;
+    }
+</style>
+
+
+<div class="container mt-5 center-box">
+    <h2 class="text-center">Disease Prediction Results</h2>
+    <hr>
+    <h3>Predicted Disease: <span class="text-primary">{{result2}}</span></h3>
+    <br>
+    <h4>Causes:</h4>
+    <ul>
+        The most common cause of heart disease is a buildup of plaque in the arteries, which can lead to a heart attack or stroke. Other risk factors include high blood pressure, high cholesterol, smoking, diabetes, and family history.
+    </ul>
+    <h4>Treatments:</h4>
+    <ul>
+        Treatment for heart disease may include lifestyle changes (such as exercise and diet), medication (such as blood thinners and beta blockers), and/or surgery (such as bypass surgery or stenting).    </ul>
+    <br>
+    <h4>Medications:</h4>
+    <ul>
+        Common medications for heart disease include statins, aspirin, beta blockers, and ACE inhibitors.
+    </ul>
+    <br>
+    <h4>Medical Advice:</h4>
+    <p> To prevent heart disease, it is important to maintain a healthy lifestyle, including regular exercise, a healthy diet, not smoking, and managing any chronic conditions like high blood pressure or diabetes.</p>
+    <br>
+    <h4>Informative Video:</h4>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    </div>
+    <div class="text-center mt-3">
+        {% comment %} <a href="{% url 'download_pdf' %}" class="btn download-btn">Download PDF</a> {% endcomment %}
+         <a href="{% url 'home' %}" class="btn btn-primary">Home</a> <a href="{% url 'download_pdf' %}" class="btn download-btn">Download PDF</a>
+    </div>
+    
+</div>
+
+{% endblock %}

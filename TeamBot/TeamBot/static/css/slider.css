@@ -1,0 +1,37 @@
+/* Set up the slider container */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Set up the slider itself */
+  .slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  }
+  
+  /* Set up the slider images */
+  .slider img {
+    height: 100%;
+    scroll-snap-align: start;
+    object-fit: cover; /* Ensure images fill their container */
+  }
+  
+  /* Make the slider responsive */
+  @media (max-width: 768px) {
+    /* Set up the slider to scroll vertically on small screens */
+    .slider {
+      flex-direction: column;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+  
+    /* Ensure the images fill their container on small screens */
+    .slider img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
